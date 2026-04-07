@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Student Grade Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark mb-5">
+        <div class="container">
+            <a class='navbar-brand mb-0 h1' href='index.html'>Student Grade Tracker</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title mb-3">Simple Weather App</h2>
+                        <p class="text-muted mb-4">
+                            This page uses a weather API from RapidAPI. Enter your RapidAPI key,
+                            search for a city, and load the current weather with AJAX.
+                        </p>
+
+                        <div class="alert alert-info" role="alert">
+                            Your key is stored only in your browser's local storage for convenience.
+                        </div>
+
+                        <form id="weatherForm">
+                            <div class="mb-3">
+                                <label for="rapidApiKey" class="form-label">RapidAPI Key</label>
+                                <input type="password" class="form-control" id="rapidApiKey" placeholder="Enter your RapidAPI key" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="cityName" class="form-label">City Name</label>
+                                <input type="text" class="form-control" id="cityName" placeholder="Try: Tirana, London, Rome" required>
+                            </div>
+
+                            <div class="d-flex gap-2 flex-wrap">
+                                <button type="submit" class="btn btn-primary" id="searchBtn">Get Weather</button>
+                                <button type="button" class="btn btn-outline-secondary" id="clearKeyBtn">Clear Saved Key</button>
+                            </div>
+                        </form>
+
+                        <div id="statusMessage" class="mt-4"></div>
+                        <div id="results" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="scripts/classwork.js"></script>
+</body>
+</html>
