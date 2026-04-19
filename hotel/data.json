@@ -1,11 +1,11 @@
 {
   "hotel": {
-    "name": "Grand Élysée Hotel",
-    "slogan": "Where Luxury Meets Timeless Elegance",
-    "description": "Nestled in the heart of the city, Grand Élysée Hotel offers an unparalleled luxury experience. With world-class amenities, exquisite dining, and breathtaking views, every moment becomes a cherished memory. Our commitment to excellence ensures that every guest receives personalized service of the highest standard.",
-    "address": "123 Royal Boulevard, Pristina, Kosovo",
-    "phone": "+383 44 123 456",
-    "email": "info@grandelysee.com",
+    "name": "Luxury Hotel Tirana",
+    "slogan": "Ku Luksi Takon Elegancën e Përjetshme",
+    "description": "Në zemër të Bllokut në Tiranë, Luxury Hotel ofron një përvojë luksi të pakrahasueshme. Me komoditete të klasit botëror, kuzhinë të shkëlqyer dhe pamje mahnitëse, çdo moment bëhet një kujtim i çmuar. Angazhimi ynë për përsosmëri siguron që çdo mysafir të marrë shërbim të personalizuar të standardit më të lartë.",
+    "address": "Rruga Ismail Qemali, Blloku, Tiranë, Shqipëri",
+    "phone": "+355 69 123 4567",
+    "email": "info@luxuryhoteltirana.al",
     "hours": "Reception: 24/7 | Restaurant: 07:00 – 23:00 | Spa: 08:00 – 22:00"
   },
   "amenities": [

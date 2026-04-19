@@ -1,5 +1,5 @@
 /**
- * Grand Élysée Hotel — Main JavaScript
+ * Luxury Hotel Tirana — Main JavaScript
  * Uses jQuery, AJAX, DOM Manipulation, Bootstrap 5
  */
 
@@ -267,7 +267,8 @@ $(document).ready(function () {
         var month = d.getMonth(); // 0-based
         var day = d.getDay(); // 0 = Sunday, 6 = Saturday
 
-        // Holiday dates (simplified — Christmas, New Year, Easter-ish)
+        // Holiday dates in MM-DD format (simplified international holidays:
+        // Christmas Eve/Day, New Year's Eve/Day, Jan 2nd, US Thanksgiving-ish Nov 28-29)
         var mmdd = String(month + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
         var holidays = ['12-24', '12-25', '12-31', '01-01', '01-02', '11-28', '11-29'];
         if (holidays.indexOf(mmdd) !== -1) return 'holiday';
@@ -480,12 +481,8 @@ $(document).ready(function () {
     $(document).on('click', '.table-item', function () {
         if ($(this).hasClass('reserved')) return;
 
-        // Deselect previous
-        $('.table-item.selected').removeClass('selected').each(function() {
-            if ($(this).data('status') === 'available') {
-                $(this).addClass('available');
-            }
-        });
+        // Deselect previous — restore 'available' class which was removed during selection
+        $('.table-item.selected').removeClass('selected').addClass('available');
 
         // Select this one
         $(this).removeClass('available').addClass('selected');
@@ -520,12 +517,12 @@ $(document).ready(function () {
                 tableEl.data('status', 'reserved');
                 tableEl.find('.table-icon').removeClass('fa-chair').addClass('fa-lock');
 
-                // Show success modal
+                // Show success modal — escape user inputs before inserting as HTML
                 $('#tableConfirmDetails').html(
-                    '<i class="fas fa-calendar me-1"></i>' + date +
-                    ' at ' + time +
-                    '<br><i class="fas fa-users me-1"></i>' + guests + ' guests' +
-                    '<br><i class="fas fa-chair me-1"></i>Table ' + selectedTableId
+                    '<i class="fas fa-calendar me-1"></i>' + escapeHtml(date) +
+                    ' at ' + escapeHtml(time) +
+                    '<br><i class="fas fa-users me-1"></i>' + escapeHtml(guests) + ' guests' +
+                    '<br><i class="fas fa-chair me-1"></i>Table ' + escapeHtml(String(selectedTableId))
                 );
 
                 var modal = new bootstrap.Modal(document.getElementById('tableSuccessModal'));
